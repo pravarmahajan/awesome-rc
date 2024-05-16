@@ -1,0 +1,38 @@
+# Disable startup message
+startup_message off
+
+# Automatically detach on hangup
+autodetach on
+
+# Increase scrollback for more history
+defscrollback 10000
+
+# Enable visual bell and show message on bell
+vbell on
+vbell_msg "bell on %t (%n)"
+
+# Colors and formatting 
+# (Adjust colors to your preference)
+term screen-256color
+
+# Define color variables
+default_color=%w
+active_tab_color=%b
+inactive_tab_color=%g
+
+# Define hardstatus strings
+hardstatus alwayslastline
+hardstatus string '%{= $active_tab_color}%-Lw%{= $default_color}%50>%n%f* %t%{-}%+Lw%< %{= $default_color}%-=%c:%s%{-}' 
+
+
+# Define key bindings for switching tabs
+bind ',' prev
+bind '.' next
+
+# (Optional) Set shell title for each tab
+shelltitle "@%t - $HOSTNAME"
+
+# (Optional) Set shell for each tab (defaults to your shell)
+shell -$SHELL
+
+  
